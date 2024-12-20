@@ -13,6 +13,7 @@ app.get((req, res, next) => {
 
 app.get('/users', (req, res) => {
   res.send('Hello Abdul Munnam!')
+  res.setHeader("myName", "X-AbdulMunnam")
   return res.json(users)
 })
 
@@ -40,7 +41,7 @@ app.delete('/users', (req, res) => {
 
 
 // MARK: - You can manage get, put, post request indvisually as:
-app.route('/users').get((req, res) => {}).put((req, res) => {}).post((req, res) => {}).delete((req, res) => {})
+// app.route('/users').get((req, res) => {}).put((req, res) => {}).post((req, res) => {}).delete((req, res) => {})
 
 
 app.listen(port, () => {
