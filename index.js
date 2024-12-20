@@ -6,6 +6,11 @@ const port = 3000
 
 // Respond with Hello World! on the homepage:
 
+app.get((req, res, next) => {
+  console.log("Middleware working there....... Hurahh!!!");
+  next()
+})
+
 app.get('/users', (req, res) => {
   res.send('Hello Abdul Munnam!')
   return res.json(users)
@@ -16,6 +21,7 @@ app.get('/users/:id', (req, res) => {
     const user = users.find((user) => user.id == id);
     return res.json(user)
   })
+ 
 // Respond to POST request on the root route (/), the application’s home page:
 
 app.post('/users', (req, res) => {
